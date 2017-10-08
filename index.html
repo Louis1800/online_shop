@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>blog</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
 
 </head>
 
@@ -27,15 +27,20 @@
 	<div class="mask">
 		<form action="register" class="register">
 			<div>注册<span>x</span></div>
-			<input type="text" name="name" placeholder="请填写用户名">
+			<input type="text" name="name" data-rule='pattern:"^[A-Za-z0-9]+$"|minlength:2|maxlength:16' placeholder="用户名的最大长度为16，最小长度为2,且只能为字母和数字">
+			<div class="input-err" id="name-input-err">用户名格式有误</div>
 			<input type="password" name="password">
+			<div class="input-err" id="password-input-err">密码格式有误</div>
 			<input type="password" id="p-validate">
-			<input type="text" name="email" placeholder="请填写邮箱">
+			<input type="text" name="email" placeholder="请填写邮箱" data-rule='pattern:"^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$"|maxlength:64'>
+			<div class="input-err" id="email-input-err">密码格式有误</div>
+			
 			<input type="submit" class="submit" value="提交">
 		</form>
-		<form action="login" class="login">
+		<form action="login" class="login" id="signup">
 			<div>登陆<span>x</span></div>
-			<input type="text" name="email" placeholder="请填写用户名或邮箱">
+			<input type="text" name="email" data-rule='pattern:"^[A-Za-z0-9]+$"|minlength:2|maxlength:16' placeholder="用户名的最大长度为16，最小长度为2,且只能为字母和数字">
+			<div class="input-err" id="email-input-err">邮箱格式有误</div>
 			<input type="password" name="password">
 			<input type="submit" class="submit" value="提交">
 		</form>
@@ -341,8 +346,10 @@
 
 	</div>
 	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
-	<!-- <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="./js/validator.js"></script>
+	<script type="text/javascript" src="./js/input.js"></script>
+	<script type="text/javascript" src="./js/createinput.js"></script>
+	<script type="text/javascript" src="./js/m-slider.js"></script>
 </body>
 
 </html>
