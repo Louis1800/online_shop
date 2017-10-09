@@ -14,32 +14,41 @@
 	<div class="n-top">
 		<div class="w-contain">
 			<ul class="w-left">
-				<li><a href="#" id="register">注册</a></li>
-				<li><a href="#" id="login">登录</a></li>
+				<li><a href="#" class="opensign" id="signupbtn">注册</a></li>
+				<li><a href="#" class="opensign" id="loginbtn">登录</a></li>
 			</ul>
 			<ul class="w-right">
-				<li><a href="" id="myorder">我的订单</a></li>
-				<li><a href="" id="mycenter">个人中心</a></li>
-				<li><a href="" id="more">更多</a></li>
+				<li id="myorder"><a href="">我的订单</a></li>
+				<li id="mycenter"><a href="">个人中心</a></li>
+				<li id="more"><a href="">更多<i class="arr"></i></a>
+					<div class="n-more">
+						<ul>
+							<li><a href="">收藏本站</a></li>
+							<li><a href="">新浪微博</a></li>
+							<li><a href="">微信公众号</a></li>
+							<li><a href="">招商合作</a></li>
+							<li><a href="">乐视招聘</a></li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
 	<div class="mask">
-		<form action="register" class="register">
-			<div>注册<span>x</span></div>
-			<input type="text" name="name" data-rule='pattern:"^[A-Za-z0-9]+$"|minlength:2|maxlength:16' placeholder="用户名的最大长度为16，最小长度为2,且只能为字母和数字">
+		<form action="signup" id="signup">
+			<div>注册<span class="closesign">x</span></div>
+			<input type="text" name="name" data-rule='pattern:"^[A-Za-z0-9]+$"|minlength:2|maxlength:16' placeholder="请输入用户名：最大长度为16，最小长度为4">
 			<div class="input-err" id="name-input-err">用户名格式有误</div>
-			<input type="password" name="password">
+			<input type="password" name="password" data-rule="minlength:6|maxlength:32" placeholder="请输入密码：长度最小为6">
 			<div class="input-err" id="password-input-err">密码格式有误</div>
-			<input type="password" id="p-validate">
-			<input type="text" name="email" placeholder="请填写邮箱" data-rule='pattern:"^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$"|maxlength:64'>
+			<!-- <input type="password" id="p-validate"> -->
+			<input type="text" name="email" data-rule='pattern:"^\\w+@\\w+\\.\\w+$"|maxlength:64' placeholder="请输入邮箱">
 			<div class="input-err" id="email-input-err">密码格式有误</div>
-			
 			<input type="submit" class="submit" value="提交">
 		</form>
-		<form action="login" class="login" id="signup">
-			<div>登陆<span>x</span></div>
-			<input type="text" name="email" data-rule='pattern:"^[A-Za-z0-9]+$"|minlength:2|maxlength:16' placeholder="用户名的最大长度为16，最小长度为2,且只能为字母和数字">
+		<form action="login" id="login">
+			<div>登陆<span class="closesign">x</span></div>
+			<input type="text" name="email">
 			<div class="input-err" id="email-input-err">邮箱格式有误</div>
 			<input type="password" name="password">
 			<input type="submit" class="submit" value="提交">
@@ -78,7 +87,7 @@
 		</div>
 	</div>
 	<div class="n-sub">
-		<div class="w-contain">
+		
 			<div class="w-absolute">
 				<div class="layout-1">
 					<ul class="n-list">
@@ -94,101 +103,855 @@
 					</ul>
 				</div>
 				<div class="n-cat layout-11">
-					<div class="layout-4">
-						<div class="m-sub-title">运动</div>
-						<ul class="n-list-text clearfix">
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">MK</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">苹果</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">MK</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">MOCo.</a></li>
-							<li><a href="">ochirly</a></li>
-							<li><a href="">黛安芬</a></li>
-						</ul>
-						<div class="m-sub-title">美妆</div>
-						<ul class="n-list-text clearfix">
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">MK</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">MOCo.</a></li>
-							<li><a href="">ochirly</a></li>
-							<li><a href="">黛安芬</a></li>
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-						</ul>
+					<div id="cat-1">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="layout-4">
-						<div class="m-sub-title">美妆</div>
-						<ul class="n-list-text clearfix">
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">MOCo.</a></li>
-							<li><a href="">ochirly</a></li>
-							<li><a href="">黛安芬</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">MOCo.</a></li>
-							<li><a href="">ochirly</a></li>
-							<li><a href="">黛安芬</a></li>
-						</ul>
-						<div class="m-sub-title">美妆</div>
-						<ul class="n-list-text clearfix">
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-							<li><a href="">Gucci</a></li>
-							<li><a href="">MK</a></li>
-							<li><a href="">UGG</a></li>
-							<li><a href="">Burberry</a></li>
-							<li><a href="">迷人饰品</a></li>
-							<li><a href="">MOCo.</a></li>
-							<li><a href="">ochirly</a></li>
-							<li><a href="">黛安芬</a></li>
-							<li><a href="">阿迪达斯</a></li>
-							<li><a href="">佳能</a></li>
-							<li><a href="">苹果</a></li>
-						</ul>
+					<div id="cat-2">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="layout-4">
-						<ul class="n-list-logo">
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-							<li><a href=""><img src="./img/temp.jpg"></a></li>
-						</ul>
+					<div id="cat-3">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-4">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-5">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-6">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-7">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-8">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div id="cat-9">
+						<div class="layout-4">
+							<div class="m-sub-title">运动</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+							</ul>
+							<div class="m-sub-title">美妆</div>
+							<ul class="n-list-text clearfix">
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+								<li><a href="">Gucci</a></li>
+								<li><a href="">MK</a></li>
+								<li><a href="">UGG</a></li>
+								<li><a href="">Burberry</a></li>
+								<li><a href="">迷人饰品</a></li>
+								<li><a href="">MOCo.</a></li>
+								<li><a href="">ochirly</a></li>
+								<li><a href="">黛安芬</a></li>
+								<li><a href="">阿迪达斯</a></li>
+								<li><a href="">佳能</a></li>
+								<li><a href="">苹果</a></li>
+							</ul>
+						</div>
+						<div class="layout-4">
+							<ul class="n-list-logo">
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+								<li><a href=""><img src="./img/temp.jpg"></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 	<div class="c-main">
 		<div class="m-sliderbg">
@@ -283,7 +1046,7 @@
 						<img src="./img/00bffx.png">
 					</div>
 					<div class="layout-7">
-						<div class="detail">
+						<div class="c-detail">
 							<h3>美在智慧</h3>
 							<p>
 								【开黑卡领200元抵用券】Apple 苹果 iPhone8 Plus (A1864) 64GB 移动联通电信4G手机 国内行货
@@ -350,6 +1113,7 @@
 	<script type="text/javascript" src="./js/input.js"></script>
 	<script type="text/javascript" src="./js/createinput.js"></script>
 	<script type="text/javascript" src="./js/m-slider.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>

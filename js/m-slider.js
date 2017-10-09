@@ -14,7 +14,7 @@ $(function() {
 	// 初始化页面
 	function init() {
 		totalpage = $content.children().length;
-		console.log(totalpage);
+		// console.log(totalpage);
 		$content.css("width",(totalpage*100 + "%"));
 		$content.children().css("width",(100 / totalpage + "%"));
 		step = $content.parent().width();
@@ -71,6 +71,6 @@ $(function() {
 		$spots.eq(page).addClass("w-current");
 	}
 	setInterval(slider,4000);
-})
+});
 
 

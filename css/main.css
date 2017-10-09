@@ -91,9 +91,22 @@ img{
 	font-size: 12px;
 	color: #232323;
 }
-.n-main{
-	
+.n-more{
+	display: none;
+	width: 80px;
+	position: absolute;
+	right: 0;
+	z-index: 105;
+	background: #f2f2f2;
 }
+.n-more li{
+}
+#more:hover{
+	background: #f2f2f2;
+}
+/* .n-main{
+	
+} */
 .n-search{
 	flex:1;
 	padding-left: 20px;
@@ -161,11 +174,25 @@ img{
 }
 .n-cat{
 	display: none;
-	background: rgba(255,255,255,1);
+	position: relative;
+	/* background: rgba(255,255,255,1); */
 	margin-top: 1px;
 	padding: 10px;
 	height: 315px;
 	overflow: hidden;
+	/* z-index: 110; */
+}
+#cat-1,
+#cat-2,
+#cat-3,
+#cat-4,
+#cat-5,
+#cat-6,
+#cat-7,
+#cat-8,
+#cat-9{
+	/* position: absolute; */
+	display: none;
 }
 .n-list-logo{
 	margin: 5px;
@@ -267,6 +294,7 @@ img{
 	right: 10px;
 	left:110px;
 	top:140px;
+	z-index: 101;
 }
 .m-slider-tip{
 	position: absolute;
@@ -302,7 +330,7 @@ img{
 	margin-bottom: -1px;
 }
 .mask{
-	/* display: none; */
+	display: none;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -311,7 +339,7 @@ img{
 	background: rgba(255,255,255,.9);
 	z-index: 999;
 }
-.register,.login{
+#signup,#login{
 	box-sizing: border-box;
 	position: absolute;
 	top: 50%;
@@ -324,8 +352,12 @@ img{
 	padding: 20px;
 	background:#fff;
 }
-.register>input,
-.login>input{
+#login{
+	display: none;
+}
+
+#signup>input,
+#login>input{
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
@@ -357,12 +389,15 @@ input:focus{
 	cursor: pointer;
 }
 .w-left{
-	display: inline-block;
+	display: block;
 	float: left;
 }
 .w-right{
-	display: inline-block;
+	display: block;
 	float: right;
+}
+w-right>li{
+	position: relative;
 }
 .w-contain {
 	position: relative;
@@ -370,9 +405,6 @@ input:focus{
 	margin-left: auto;
 	/*width: 980px;*/
 	width: 100%;
-}
-.w-contain-s{
-	margin-bottom: 2px; 
 }
 @media (min-width: 768px) {
 	.w-contain {
@@ -393,7 +425,24 @@ input:focus{
 	right: 0;
 	z-index: 100;
 }
-
+.arr:hover{
+	position: absolute;
+    right: 14px;
+    top: 50%;
+    margin-top: -2px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-color: #666 transparent transparent;
+    border-style: solid dashed dashed;
+    border-width: 4px 4px 0;
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    -moz-transition: -moz-transform 0.2s ease-in;
+    -ms-transition: -ms-transform 0.2s ease-in;
+    -o-transition: -o-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+}
 
 /*布局*/
 .layout-1, .layout-2, .layout-3, .layout-4, .layout-5, .layout-6, .layout-7, .layout-8, .layout-9, .layout-10, .layout-11, .layout-12{
